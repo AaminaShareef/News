@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script>
+        window.onerror = function (msg, url, lineNo, columnNo, error) {
+            fetch('/log_err?msg=' + encodeURIComponent(msg + ' | Line: ' + lineNo));
+            return false;
+        };
+        fetch('/log_err?msg=started_ok');
+    </script>
+    <script src="charts.js"></script>
+</head>
+
+<body>
+    <div class="chart-wrap"><canvas id="bar-chart"></canvas></div>
+    <div class="chart-wrap"><canvas id="pie-chart"></canvas></div>
+    <div class="chart-wrap"><canvas id="line-chart"></canvas></div>
+    <div class="chart-wrap"><canvas id="hbar-chart"></canvas></div>
+    <div class="chart-wrap"><canvas id="stacked-chart"></canvas></div>
+    <div class="chart-wrap"><canvas id="country-chart"></canvas></div>
+    <script>
+        const data = [{ event_type: 'Economic', risk_level: 'HIGH', risk_score: 0.9, published_at: '2023-01-01', country: 'USA' }];
+        try { renderBarChart(data); fetch('/log_err?msg=bar_ok'); } catch (e) { fetch('/log_err?msg=bar_err_' + encodeURIComponent(e.stack)); }
+        try { renderPieChart(data); fetch('/log_err?msg=pie_ok'); } catch (e) { fetch('/log_err?msg=pie_err_' + encodeURIComponent(e.stack)); }
+        try { renderLineChart(data); fetch('/log_err?msg=line_ok'); } catch (e) { fetch('/log_err?msg=line_err_' + encodeURIComponent(e.stack)); }
+        try { renderAvgRiskChart(data); fetch('/log_err?msg=hbar_ok'); } catch (e) { fetch('/log_err?msg=hbar_err_' + encodeURIComponent(e.stack)); }
+        try { renderStackedChart(data); fetch('/log_err?msg=stacked_ok'); } catch (e) { fetch('/log_err?msg=stacked_err_' + encodeURIComponent(e.stack)); }
+        try { renderCountryChart(data); fetch('/log_err?msg=country_ok'); } catch (e) { fetch('/log_err?msg=country_err_' + encodeURIComponent(e.stack)); }
+        setTimeout(() => fetch('/log_err?msg=DONE'), 500);
+    </script>
+</body>
+
+</html>

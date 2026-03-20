@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProcureGuard — AI Procurement Risk Intelligence</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Dashboard CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- Alert Banner -->
+<div id="alert-banner">
+  <span>⚠ CRITICAL ALERT —</span>
+  <strong id="alert-count">0</strong>&nbsp;high-risk event(s) require immediate attention
+  <span class="close-alert" id="close-alert" title="Dismiss">✕</span>
+</div>
+
+<!-- Spinner -->
+<div id="spinner-overlay">
+  <div class="spinner-ring"></div>
+  <div class="spinner-text" id="spinner-text">Analysing news data…</div>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <div class="logo-icon">🛡️</div>
+    <span class="brand-name">ProcureGuard</span>
+    <span class="brand-live"><span class="live-dot"></span>LIVE</span>
+  </div>
+  <div class="navbar-search">
+    <span class="search-icon">🔎</span>
+    <input id="search-input" type="text"
+      placeholder='e.g. "port strike OR flood OR war supply chain"'
+      autocomplete="off">
+  </div>
+  <div class="navbar-actions">
+    <button class="btn btn-primary" id="analyze-btn">⚡ Analyse</button>
+    <button class="btn btn-outline" id="upload-btn">📂 Upload CSV</button>
+    <button class="btn btn-outline btn-sm" id="export-btn">⬇ Export</button>
+    <input type="file" id="upload-input" accept=".csv">
+  </div>
+</nav>
+
+<!-- Layout -->
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-title">🎛 Filters</div>
+
+    <div class="filter-group">
+      <div class="filter-label"><span class="fi-icon">▸</span> Country</div>
+      <div class="filter-options" id="filter-country">
+        <div class="meta-item" style="font-size:0.73rem;padding:4px 2px;color:var(--text-muted)">
+          Run an analysis to populate filters.
+        </div>
+      </div>
+    </div>
+    <hr class="sidebar-divider">
+
+    <div class="filter-group">
+      <div class="filter-label"><span class="fi-icon">▸</span> Region</div>
+      <div class="filter-options" id="filter-region"></div>
+    </div>
+    <hr class="sidebar-divider">
+
+    <div class="filter-group">
+      <div class="filter-label"><span class="fi-icon">▸</span> Event Type</div>
+      <div class="filter-options" id="filter-event-type"></div>
+    </div>
+    <hr class="sidebar-divider">
+
+    <div class="filter-group">
+      <div class="filter-label"><span class="fi-icon">▸</span> Risk Level</div>
+      <div class="filter-options" id="filter-risk-level"></div>
+    </div>
+    <hr class="sidebar-divider">
+
+    <div style="padding:4px 0 12px">
+      <div class="filter-label" style="margin-bottom:10px">Risk Key</div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div class="legend-item"><span class="legend-dot" style="background:#ff3d54"></span>HIGH — Immediate action</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#ff6b35"></span>MEDIUM-HIGH — Monitor closely</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#f5a623"></span>MEDIUM — Track &amp; assess</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#3ecf72"></span>LOW-MEDIUM — Stay aware</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#00c8ff"></span>LOW — Informational</div>
+      </div>
+    </div>
+    <hr class="sidebar-divider">
+
+    <button class="btn btn-outline btn-sm" id="clear-filters" style="width:100%;justify-content:center;">
+      ✕ Clear All Filters
+    </button>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-content">
+
+    <!-- KPI Strip -->
+    <div class="kpi-strip">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Articles</div>
+        <div class="kpi-value" id="kpi-total">—</div>
+        <div class="kpi-sub">analysed this session</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">HIGH Risk</div>
+        <div class="kpi-value high" id="kpi-high">—</div>
+        <div class="kpi-sub">critical events</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">MEDIUM Risk</div>
+        <div class="kpi-value medium" id="kpi-medium">—</div>
+        <div class="kpi-sub">moderate events</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">LOW Risk</div>
+        <div class="kpi-value low" id="kpi-low">—</div>
+        <div class="kpi-sub">minor events</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Top Category</div>
+        <div class="kpi-value" id="kpi-event" style="font-size:1rem;padding-top:6px;letter-spacing:0">—</div>
+        <div class="kpi-sub">dominant event type</div>
+      </div>
+    </div>
+
+    <!-- Section: Overview -->
+    <div class="charts-section-label">Overview</div>
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">📊 Events by Type</div>
+          <span class="chart-badge">VOLUME</span>
+        </div>
+        <div class="chart-desc">Which disruption category has the most articles?</div>
+        <div class="chart-wrap"><canvas id="bar-chart" height="200"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">◉ Risk Distribution</div>
+          <span class="chart-badge">SPLIT</span>
+        </div>
+        <div class="chart-desc">What proportion of events are HIGH vs LOW risk?</div>
+        <div class="chart-wrap"><canvas id="pie-chart" height="200"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">📈 Risk Score Trend</div>
+          <span class="chart-badge">TIMELINE</span>
+        </div>
+        <div class="chart-desc">Is overall supply chain risk rising or falling over time?</div>
+        <div class="chart-wrap"><canvas id="line-chart" height="200"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Section: Deep Dive -->
+    <div class="charts-section-label">Deep Dive</div>
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">⚖️ Avg Risk by Category</div>
+          <span class="chart-badge">SEVERITY</span>
+        </div>
+        <div class="chart-desc">Which event type carries the highest average risk weight?</div>
+        <div class="chart-wrap"><canvas id="hbar-chart" height="200"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">🧱 Risk Mix per Category</div>
+          <span class="chart-badge">COMPOSITION</span>
+        </div>
+        <div class="chart-desc">For each disruption type, what mix of risk levels appears?</div>
+        <div class="chart-wrap"><canvas id="stacked-chart" height="200"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">🌍 Top Affected Regions</div>
+          <span class="chart-badge">GEOGRAPHY</span>
+        </div>
+        <div class="chart-desc">Where are disruptions concentrated? Bar colour = dominant risk.</div>
+        <div class="chart-wrap"><canvas id="country-chart" height="200"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="results-header">
+      <div>
+        <div class="results-title">Risk Intelligence Feed</div>
+        <div class="results-meta" id="results-count">Run a query to load articles</div>
+      </div>
+    </div>
+
+    <div id="news-grid"></div>
+    <div class="pagination" id="pagination"></div>
+
+  </main>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>
