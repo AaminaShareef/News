@@ -1,0 +1,532 @@
+text,label
+War escalates near oil fields disrupting supply,Geopolitical_Negative
+Military conflict blocks major shipping corridor,Geopolitical_Negative
+Sanctions imposed on key exporting nation,Geopolitical_Negative
+Rebel attack damages critical pipeline infrastructure,Geopolitical_Negative
+Armed conflict forces factory evacuation in region,Geopolitical_Negative
+Naval blockade cuts off tanker routes,Geopolitical_Negative
+Drone strike damages oil refinery output,Geopolitical_Negative
+Coup disrupts national logistics and supply network,Geopolitical_Negative
+Border conflict closes key freight checkpoint,Geopolitical_Negative
+Territorial dispute shuts down shipping lane,Geopolitical_Negative
+Missile strike damages industrial supply zone,Geopolitical_Negative
+Trade war escalates disrupting electronics supply chain,Geopolitical_Negative
+Insurgency blocks road freight corridor in region,Geopolitical_Negative
+Sanctions freeze semiconductor export channels,Geopolitical_Negative
+Political unrest closes border checkpoints indefinitely,Geopolitical_Negative
+Piracy surge threatens cargo vessels in key strait,Geopolitical_Negative
+International embargo restricts critical material exports,Geopolitical_Negative
+Cyber warfare disrupts national freight systems,Geopolitical_Negative
+Occupation of industrial zone halts production,Geopolitical_Negative
+Civil war cuts off agricultural export routes,Geopolitical_Negative
+Geopolitical tensions monitored as talks continue,Geopolitical_Neutral
+Diplomatic negotiations ongoing over trade restrictions,Geopolitical_Neutral
+Sanctions review underway with no decision yet,Geopolitical_Neutral
+Border dispute talks continue without resolution,Geopolitical_Neutral
+Trade partners hold discussions on tariff changes,Geopolitical_Neutral
+Military presence near shipping lane being observed,Geopolitical_Neutral
+Analysts watching geopolitical developments in region,Geopolitical_Neutral
+Governments in talks over export control regulations,Geopolitical_Neutral
+Trade mission underway to resolve bilateral disputes,Geopolitical_Neutral
+Ceasefire negotiations ongoing between conflicting parties,Geopolitical_Neutral
+Ceasefire agreement reached restoring trade routes,Geopolitical_Positive
+Sanctions lifted allowing exports to resume,Geopolitical_Positive
+Peace deal signed opening border freight corridors,Geopolitical_Positive
+Trade agreement normalises bilateral supply relations,Geopolitical_Positive
+Diplomatic resolution restores shipping lane access,Geopolitical_Positive
+Conflict ends allowing factories to reopen safely,Geopolitical_Positive
+Embargo lifted boosting commodity exports significantly,Geopolitical_Positive
+Political stability returns normalising supply operations,Geopolitical_Positive
+New trade deal reduces tariffs on key imports,Geopolitical_Positive
+Relations restored between major trading partners,Geopolitical_Positive
+Trade tariffs raised sharply disrupting import costs,Economic_Negative
+Recession hits manufacturing sector reducing output,Economic_Negative
+Currency devaluation inflates import costs significantly,Economic_Negative
+Credit crunch halts supplier financing globally,Economic_Negative
+Commodity price spike disrupts food supply chain,Economic_Negative
+Inflation surge disrupts raw material procurement,Economic_Negative
+Supplier bankruptcy leaves supply chain without source,Economic_Negative
+Export quota tightens global commodity supply,Economic_Negative
+Financial crisis forces factory shutdowns globally,Economic_Negative
+Rising fuel costs cripple freight operations nationwide,Economic_Negative
+Import ban on agricultural products stalls trade flow,Economic_Negative
+Economic sanctions block payment systems for trade,Economic_Negative
+Debt crisis forces government to restrict imports,Economic_Negative
+Bank failure freezes supplier payment pipelines,Economic_Negative
+Budget cuts reduce border infrastructure maintenance,Economic_Negative
+Capital flight weakens currency raising import prices,Economic_Negative
+Trade bloc dissolution disrupts preferential export terms,Economic_Negative
+Subsidy removal disrupts fertilizer distribution chain,Economic_Negative
+Insurance premium spike raises ocean freight costs,Economic_Negative
+Liquidity crisis halts cross-border payment processing,Economic_Negative
+Trade negotiations ongoing with no outcome yet,Economic_Neutral
+Economists monitoring commodity price movements closely,Economic_Neutral
+Tariff review underway between trading partners,Economic_Neutral
+Currency fluctuations being watched by analysts,Economic_Neutral
+Central bank holds rates affecting supply finance,Economic_Neutral
+Trade agreement renegotiation in progress,Economic_Neutral
+Commodity markets steady amid economic uncertainty,Economic_Neutral
+Import duty review ongoing at customs authority,Economic_Neutral
+Economic indicators mixed for manufacturing sector,Economic_Neutral
+Analysts assess impact of tax changes on supply costs,Economic_Neutral
+Trade deal signed reducing import costs significantly,Economic_Positive
+Tariffs reduced boosting cross-border supply flows,Economic_Positive
+Currency stabilises easing pressure on import costs,Economic_Positive
+Commodity prices fall reducing manufacturing input costs,Economic_Positive
+New investment boosts supplier capacity and output,Economic_Positive
+Economic recovery drives demand for manufactured goods,Economic_Positive
+Fuel price drop reduces logistics operating costs,Economic_Positive
+Trade subsidies introduced supporting export growth,Economic_Positive
+Financing conditions improve for supply chain firms,Economic_Positive
+GDP growth drives increased manufacturing activity,Economic_Positive
+Port closure delays hundreds of container ships,Logistics_Negative
+Train derailment blocks key freight corridor,Logistics_Negative
+Bridge collapse cuts off major trade route,Logistics_Negative
+Canal blockage delays hundreds of cargo vessels,Logistics_Negative
+Cyberattack shuts down freight management systems,Logistics_Negative
+Cargo ship grounded blocking busy waterway,Logistics_Negative
+Warehouse fire destroys inventory stockpile,Logistics_Negative
+Airport closure disrupts air cargo network,Logistics_Negative
+Ransomware attack halts port terminal operations,Logistics_Negative
+Shipping container shortage delays global trade,Logistics_Negative
+Cold chain failure spoils critical pharmaceutical shipments,Logistics_Negative
+Crane collapse halts container loading at major dock,Logistics_Negative
+Fuel tanker explosion closes highway freight route,Logistics_Negative
+Power outage halts automated distribution centre,Logistics_Negative
+Customs IT system failure delays thousands of shipments,Logistics_Negative
+Shipping alliance collapse disrupts global freight rates,Logistics_Negative
+Cargo vessel engine failure causes major port backlog,Logistics_Negative
+Shipping firm bankruptcy leaves cargo stranded at port,Logistics_Negative
+Road closure after accident delays freight convoy,Logistics_Negative
+Refrigeration failure spoils perishable food shipment,Logistics_Negative
+Port congestion being monitored by shipping authorities,Logistics_Neutral
+Customs clearance process under review for efficiency,Logistics_Neutral
+Rail freight schedule adjustments being implemented,Logistics_Neutral
+Shipping routes under assessment after incident,Logistics_Neutral
+Logistics operators monitoring container availability,Logistics_Neutral
+Air cargo capacity being evaluated for peak season,Logistics_Neutral
+Port authority reviewing loading procedures,Logistics_Neutral
+Freight tracking systems undergoing maintenance,Logistics_Neutral
+Distribution network review ongoing after disruption,Logistics_Neutral
+Shipping lines assess route changes due to conditions,Logistics_Neutral
+Port reopens after repairs restoring container flow,Logistics_Positive
+Rail freight service restored after track maintenance,Logistics_Positive
+New shipping route opens reducing transit time,Logistics_Positive
+Customs system upgrade speeds up clearance process,Logistics_Positive
+Container shortage eases improving delivery schedules,Logistics_Positive
+Highway reopens after accident clearing freight backlog,Logistics_Positive
+New warehouse facility opens boosting storage capacity,Logistics_Positive
+Air cargo capacity increases meeting holiday demand,Logistics_Positive
+Port expansion completed increasing throughput capacity,Logistics_Positive
+Automated freight system upgrade improves efficiency,Logistics_Positive
+Hurricane closes ports across Gulf Coast region,Weather_Negative
+Typhoon disrupts shipping across Southeast Asia,Weather_Negative
+Earthquake damages major port infrastructure,Weather_Negative
+Flooding washes out road supply network,Weather_Negative
+Blizzard freezes logistics hubs across northern region,Weather_Negative
+Wildfire forces evacuation of industrial zone,Weather_Negative
+Landslide blocks mountain freight passage,Weather_Negative
+Severe snowstorm blocks interstate freight routes,Weather_Negative
+Drought reduces river depth halting barge traffic,Weather_Negative
+Heatwave buckles rail lines causing freight delays,Weather_Negative
+Storm surge floods industrial port terminal,Weather_Negative
+Cyclone damages offshore oil platform output,Weather_Negative
+Flash flood isolates key manufacturing plant,Weather_Negative
+Ice storm closes ports along eastern seaboard,Weather_Negative
+Volcanic eruption grounds cargo flights in region,Weather_Negative
+Extreme cold snaps freeze fuel pipelines overnight,Weather_Negative
+Mudslide destroys access road to key plant,Weather_Negative
+Heavy fog halts river transport operations,Weather_Negative
+Hailstorm damages greenhouse farming infrastructure,Weather_Negative
+Tsunami warning shuts Pacific shipping lanes,Weather_Negative
+Storm warning issued for key shipping region,Weather_Neutral
+Weather authorities monitoring developing cyclone,Weather_Neutral
+Flood risk assessment underway in freight corridor,Weather_Neutral
+Seasonal weather patterns being tracked by operators,Weather_Neutral
+Drought conditions being monitored in farming region,Weather_Neutral
+Winter weather forecast for major freight hub,Weather_Neutral
+River levels being watched after recent rainfall,Weather_Neutral
+Meteorologists tracking storm near shipping lanes,Weather_Neutral
+Weather impact on harvest under assessment,Weather_Neutral
+Coastal storm watch issued for port region,Weather_Neutral
+Storm clears restoring shipping lane operations,Weather_Positive
+Flood waters recede reopening freight routes,Weather_Positive
+Port reopens after hurricane damage repaired,Weather_Positive
+Rail lines restored after snow clearance operations,Weather_Positive
+River levels return to normal resuming barge traffic,Weather_Positive
+Drought breaks allowing crop harvest to resume,Weather_Positive
+Weather improves enabling offshore platform restart,Weather_Positive
+Roads cleared after landslide restoring supply access,Weather_Positive
+Fog lifts restoring visibility for freight operations,Weather_Positive
+Mild weather forecast supports logistics operations,Weather_Positive
+Dock workers strike stalls container operations,Labour_Negative
+Port workers walkout delays cargo unloading,Labour_Negative
+Truck drivers strike over fuel price hike,Labour_Negative
+Rail workers strike blocks freight movement,Labour_Negative
+Warehouse staff strike halts distribution centre,Labour_Negative
+Pilots strike grounds air cargo fleet,Labour_Negative
+Mine workers strike reduces coal output significantly,Labour_Negative
+Factory workers protest halts automotive production,Labour_Negative
+Longshoremen strike causes severe port congestion,Labour_Negative
+General strike paralyses domestic freight movement,Labour_Negative
+Refinery workers strike cuts fuel production output,Labour_Negative
+Customs officers strike slows border trade flow,Labour_Negative
+Freight handlers strike delays airport cargo operations,Labour_Negative
+Oil workers strike reduces offshore platform output,Labour_Negative
+Steel plant workers strike halts metal supply chain,Labour_Negative
+Seafarers union strike grounds merchant vessel fleet,Labour_Negative
+Mining engineers strike halts ore extraction,Labour_Negative
+Chemical plant workers strike halts production,Labour_Negative
+Offshore platform workers strike cuts oil output,Labour_Negative
+Agricultural workers strike delays harvest shipment,Labour_Negative
+Strike negotiations ongoing between union and management,Labour_Neutral
+Labour dispute talks continuing without agreement,Labour_Neutral
+Workers vote on strike action at manufacturing plant,Labour_Neutral
+Union demands being reviewed by company management,Labour_Neutral
+Collective bargaining talks underway at port authority,Labour_Neutral
+Workers considering industrial action at distribution hub,Labour_Neutral
+Labour relations review ongoing at freight company,Labour_Neutral
+Union representatives meeting management over pay,Labour_Neutral
+Strike ballot results awaited at automotive plant,Labour_Neutral
+Workers hold discussions over contract renewal terms,Labour_Neutral
+Strike ends as workers accept new pay agreement,Labour_Positive
+Union reaches deal restoring port operations fully,Labour_Positive
+Workers return after successful wage negotiation,Labour_Positive
+Labour dispute resolved resuming factory production,Labour_Positive
+New contract signed ending transport worker strike,Labour_Positive
+Rail workers return ending freight disruption,Labour_Positive
+Port operations resume after longshore dispute settled,Labour_Positive
+Mine workers end strike resuming ore production,Labour_Positive
+Agreement reached ending refinery worker walkout,Labour_Positive
+Workers and management reach deal restoring operations,Labour_Positive
+Celebrity wins award at major film ceremony,Not_Relevant
+Football team wins championship after long season,Not_Relevant
+New smartphone model released by tech company,Not_Relevant
+Popular TV show renewed for another season,Not_Relevant
+Music artist announces world concert tour,Not_Relevant
+Sports league announces new season schedule,Not_Relevant
+Actor signs deal for new blockbuster movie,Not_Relevant
+Social media platform launches new video feature,Not_Relevant
+Celebrity couple announces engagement publicly,Not_Relevant
+Gaming company releases new console model,Not_Relevant
+Film festival announces award winners this year,Not_Relevant
+Tennis player wins grand slam tournament title,Not_Relevant
+New restaurant opens in major city downtown,Not_Relevant
+Book tops bestseller chart for third week,Not_Relevant
+Reality TV show attracts record viewership,Not_Relevant
+Famous chef releases new cookbook today,Not_Relevant
+Music band releases anniversary album edition,Not_Relevant
+Athlete breaks world record at championship,Not_Relevant
+Theme park announces new attraction opening,Not_Relevant
+Comedy special receives standing ovation online,Not_Relevant
+Travel blogger shares tips for budget vacation,Not_Relevant
+Art exhibition opens at national gallery,Not_Relevant
+Sports team signs marquee player before deadline,Not_Relevant
+Streaming platform adds new original series,Not_Relevant
+Fashion week showcases spring collection globally,Not_Relevant
+New animated movie breaks box office records,Not_Relevant
+Podcast reaches one hundred million listeners,Not_Relevant
+Science museum opens new interactive exhibit,Not_Relevant
+Video game sequel breaks pre-order sales records,Not_Relevant
+Dance competition finals air this weekend,Not_Relevant
+War tensions disrupt crude oil distribution network,Geopolitical_Negative
+Conflict zone expands threatening supply chain routes,Geopolitical_Negative
+Retaliatory sanctions cut semiconductor trade flows,Geopolitical_Negative
+Military standoff near key oil producing region,Geopolitical_Negative
+Government collapse disrupts supply chain operations,Geopolitical_Negative
+Cross-border shelling damages freight infrastructure,Geopolitical_Negative
+Trade sanctions block payment systems for imports,Geopolitical_Negative
+Hostile takeover of port disrupts operations,Geopolitical_Negative
+Terrorist attack on pipeline reduces fuel supply,Geopolitical_Negative
+Export ban on grain causes global food concerns,Geopolitical_Negative
+Peace talks progressing between conflicting nations,Geopolitical_Neutral
+Leaders meet to discuss trade route security,Geopolitical_Neutral
+Sanctions review expected in coming weeks,Geopolitical_Neutral
+International observers monitor disputed territory,Geopolitical_Neutral
+Trade envoys meet to resolve export restrictions,Geopolitical_Neutral
+Diplomatic channels open for border trade talks,Geopolitical_Neutral
+Analysts track sanctions impact on commodity trade,Geopolitical_Neutral
+Regional stability improving following elections,Geopolitical_Positive
+New administration opens trade with key partners,Geopolitical_Positive
+Diplomatic ties restored boosting bilateral trade,Geopolitical_Positive
+Import restrictions eased following trade talks,Geopolitical_Positive
+Tariff removal boosts manufacturer input sourcing,Geopolitical_Positive
+Recession fears reduce orders across supply chain,Economic_Negative
+Rising steel prices halt new warehouse construction,Economic_Negative
+Tax overhaul disrupts cross-border supply contracts,Economic_Negative
+Foreign exchange controls stall import clearances,Economic_Negative
+Investor withdrawal freezes port expansion project,Economic_Negative
+Profit squeeze forces warehouse operator closures,Economic_Negative
+Commodity speculation drives up agricultural costs,Economic_Negative
+VAT increase raises costs across supply chain,Economic_Negative
+Austerity measures cut logistics infrastructure budget,Economic_Negative
+Energy price surge forces factory production cuts,Economic_Negative
+Policymakers assess economic impact on supply chains,Economic_Neutral
+Trade ministers review import duty frameworks,Economic_Neutral
+Budget proposals assessed for logistics impact,Economic_Neutral
+Economists review impact of rate change on trade,Economic_Neutral
+Market watchers monitor commodity price direction,Economic_Neutral
+Analysts review tariff impact on electronics imports,Economic_Neutral
+Supply chain finance trends under industry review,Economic_Neutral
+New infrastructure investment boosts logistics capacity,Economic_Positive
+Lower energy prices reduce manufacturing input costs,Economic_Positive
+Trade deal cuts tariffs on raw material imports,Economic_Positive
+Improved credit conditions support supplier growth,Economic_Positive
+Export incentives drive growth in manufacturing sector,Economic_Positive
+Shipping route cancelled disrupting regular deliveries,Logistics_Negative
+Last-mile delivery failure increases distribution costs,Logistics_Negative
+Mislabelled hazardous cargo causes port shutdown,Logistics_Negative
+Dredging failure reduces port depth for vessels,Logistics_Negative
+Network outage disrupts real-time freight tracking,Logistics_Negative
+Pallet shortage disrupts warehouse loading operations,Logistics_Negative
+Driver licensing delays worsen trucking capacity,Logistics_Negative
+Ferry ramp failure halts vehicle freight loading,Logistics_Negative
+Inadequate cold storage causes pharmaceutical spoilage,Logistics_Negative
+Runway closure diverts air freight to distant hub,Logistics_Negative
+Freight operators reviewing route efficiency plans,Logistics_Neutral
+Customs authorities assessing new clearance procedures,Logistics_Neutral
+Shipping lines monitor container availability trends,Logistics_Neutral
+Port authority reviewing new loading technologies,Logistics_Neutral
+Logistics firms assess impact of new regulations,Logistics_Neutral
+Distribution network being optimised for efficiency,Logistics_Neutral
+New logistics hub construction nearing completion,Logistics_Positive
+Freight rail capacity expanded to meet demand,Logistics_Positive
+Digital customs platform cuts clearance time,Logistics_Positive
+New direct shipping route reduces transit costs,Logistics_Positive
+Drone delivery trial improves last-mile efficiency,Logistics_Positive
+Storm warning upgraded near major shipping lane,Weather_Negative
+Prolonged drought reduces hydroelectric factory power,Weather_Negative
+River ice breakup damages dock infrastructure,Weather_Negative
+Extreme UV forces outdoor logistics work pause,Weather_Negative
+Sub-zero temperatures disable truck fleets,Weather_Negative
+Lightning strikes cause power outage at freight hub,Weather_Negative
+Coastal erosion damages port loading infrastructure,Weather_Negative
+Wildfire smoke reduces visibility for truckers,Weather_Negative
+Heat dome forces railway speed reduction,Weather_Negative
+Unseasonal freeze damages citrus harvest for export,Weather_Negative
+Seasonal weather outlook reviewed by logistics firms,Weather_Neutral
+Meteorologists issue advisory for freight corridor,Weather_Neutral
+Operators prepare contingency for storm season,Weather_Neutral
+Port authorities monitor tidal conditions closely,Weather_Neutral
+Seasonal crop forecast reviewed for export outlook,Weather_Neutral
+Improved weather forecast supports freight scheduling,Weather_Positive
+Rainfall ends drought boosting agricultural output,Weather_Positive
+Warm front clears ice restoring northern freight routes,Weather_Positive
+Calm seas restore ferry freight service,Weather_Positive
+Improved visibility restores airport cargo operations,Weather_Positive
+Textile workers strike disrupts garment exports,Labour_Negative
+Bus drivers strike disrupts last-mile delivery,Labour_Negative
+Security personnel strike closes freight terminal,Labour_Negative
+Cold store workers strike disrupts frozen food supply,Labour_Negative
+Postal workers strike disrupts parcel delivery network,Labour_Negative
+Tyre factory workers strike disrupts vehicle supply,Labour_Negative
+Quarry workers strike reduces construction material supply,Labour_Negative
+Cement plant workers strike halts building supply,Labour_Negative
+Forestry workers strike cuts timber supply chain,Labour_Negative
+Fuel depot workers strike disrupts distribution,Labour_Negative
+Workers monitoring outcome of contract negotiations,Labour_Neutral
+Union officials reviewing management wage proposals,Labour_Neutral
+Labour relations consultants brought in for talks,Labour_Neutral
+Workers hold meetings over new contract terms,Labour_Neutral
+Strike threat issued pending management response,Labour_Neutral
+Workforce and management in mediation proceedings,Labour_Neutral
+New pay structure agreed ending labour dispute,Labour_Positive
+Workers ratify contract resuming normal operations,Labour_Positive
+Mediation succeeds ending transport workers action,Labour_Positive
+New benefits package ends factory floor dispute,Labour_Positive
+Long-running port dispute finally resolved today,Labour_Positive
+Celebrity spotted at premiere of new drama film,Not_Relevant
+Sports commentator signs deal with broadcaster,Not_Relevant
+Music streaming platform updates recommendation algorithm,Not_Relevant
+Famous novelist wins international literary prize,Not_Relevant
+Local marathon raises funds for community charity,Not_Relevant
+New fitness app launches gaining millions of users,Not_Relevant
+Award-winning director announces next film project,Not_Relevant
+Popular video game receives major content update,Not_Relevant
+Classic car auction draws collectors worldwide,Not_Relevant
+Bestselling author announces sequel to popular novel,Not_Relevant
+Home renovation show returns for new season,Not_Relevant
+Nature photographer wins global recognition award,Not_Relevant
+Animated short film goes viral on social media,Not_Relevant
+Travel magazine names top global destinations,Not_Relevant
+Science fiction movie premieres at international festival,Not_Relevant
+Luxury fashion house unveils exclusive new collection,Not_Relevant
+Comedian wins award at prestigious comedy festival,Not_Relevant
+New theme park opens in major tourist destination,Not_Relevant
+Sports league signs exclusive broadcasting contract,Not_Relevant
+Celebrity chef partners with food delivery platform,Not_Relevant
+text,label
+Cargo ship seized in disputed waters halting shipment,Logistics_Negative
+Container terminal fire destroys stored freight,Logistics_Negative
+Freight software outage disrupts nationwide delivery,Logistics_Negative
+Shipping alliance collapse leaves cargo stranded,Logistics_Negative
+Port dredging failure blocks large vessels entry,Logistics_Negative
+Air cargo capacity slashed due to aircraft grounding,Logistics_Negative
+Hazardous cargo mislabel triggers port shutdown,Logistics_Negative
+Cold chain breakdown spoils vaccine shipments,Logistics_Negative
+Truck convoy blocked by road collapse,Logistics_Negative
+Railway signal failure halts freight across region,Logistics_Negative
+Last mile delivery network collapses under demand,Logistics_Negative
+Ferry suspension cuts island supply routes,Logistics_Negative
+Warehouse roof collapse destroys inventory,Logistics_Negative
+Fuel misfuelling grounds entire delivery fleet,Logistics_Negative
+Customs database hack delays clearance for thousands,Logistics_Negative
+Port authority reviewing vessel queue backlog,Logistics_Neutral
+Shipping lines assessing container availability trends,Logistics_Neutral
+Freight operators monitoring route efficiency plans,Logistics_Neutral
+Customs authorities reviewing new clearance procedures,Logistics_Neutral
+Logistics firms evaluating new warehouse locations,Logistics_Neutral
+Distribution network undergoing efficiency review,Logistics_Neutral
+Air cargo demand being assessed for peak season,Logistics_Neutral
+Port authority trialling new loading technology,Logistics_Neutral
+Freight tracking systems undergoing scheduled maintenance,Logistics_Neutral
+Shipping routes under assessment after minor incident,Logistics_Neutral
+New port expansion project nearing completion,Logistics_Positive
+Freight rail capacity expanded to meet rising demand,Logistics_Positive
+Digital customs platform cuts clearance time significantly,Logistics_Positive
+Container shortage eases improving delivery schedules,Logistics_Positive
+New direct shipping lane reduces transit costs,Logistics_Positive
+Drone delivery pilot improves last mile efficiency,Logistics_Positive
+Automated warehouse system upgrade boosts throughput,Logistics_Positive
+Highway reopens clearing major freight backlog,Logistics_Positive
+New cold storage facility opens supporting pharma supply,Logistics_Positive
+Port congestion clears as new berths come online,Logistics_Positive
+Military conflict disrupts grain corridor exports,Geopolitical_Negative
+Naval blockade tightens around oil exporting nation,Geopolitical_Negative
+Armed drone strikes damage pipeline infrastructure,Geopolitical_Negative
+Sanctions extended blocking critical chemical exports,Geopolitical_Negative
+Rebel forces seize port disrupting regional exports,Geopolitical_Negative
+Espionage scandal triggers retaliatory trade restrictions,Geopolitical_Negative
+Coup government nationalises foreign logistics assets,Geopolitical_Negative
+Cross border artillery fire damages freight depot,Geopolitical_Negative
+Proxy conflict expands threatening oil supply routes,Geopolitical_Negative
+International court freezes assets of key exporter,Geopolitical_Negative
+Territorial sea dispute closes key tanker lane,Geopolitical_Negative
+Nuclear tensions raise shipping insurance premiums sharply,Geopolitical_Negative
+Foreign military exercises halt civilian shipping,Geopolitical_Negative
+Terrorist bombing near refinery reduces oil output,Geopolitical_Negative
+State-sponsored cyberattack disrupts freight systems,Geopolitical_Negative
+Diplomatic envoys meet to discuss trade lane security,Geopolitical_Neutral
+Analysts track escalating tensions near shipping routes,Geopolitical_Neutral
+Trade sanctions review expected within coming weeks,Geopolitical_Neutral
+International monitors observe disputed territory,Geopolitical_Neutral
+Leaders hold summit on regional trade disruptions,Geopolitical_Neutral
+Security council debates sanctions impact on supply,Geopolitical_Neutral
+Trade partners in talks over export restrictions,Geopolitical_Neutral
+Ceasefire holding but analysts urge caution,Geopolitical_Neutral
+Diplomatic back-channel open for border trade talks,Geopolitical_Neutral
+Regional stability slowly improving after elections,Geopolitical_Neutral
+Peace agreement restores key overland trade route,Geopolitical_Positive
+Sanctions lifted allowing pharmaceutical exports to resume,Geopolitical_Positive
+Trade corridor reopens following diplomatic resolution,Geopolitical_Positive
+New alliance agreement cuts tariffs on raw materials,Geopolitical_Positive
+Conflict ends allowing idle factories to reopen,Geopolitical_Positive
+Embargo lifted as international monitors confirm compliance,Geopolitical_Positive
+Border crossing reopens ending months of trade halt,Geopolitical_Positive
+Diplomatic deal restores shipping lane access fully,Geopolitical_Positive
+New free trade zone established boosting regional exports,Geopolitical_Positive
+Economic sanctions relief boosts pharmaceutical trade,Economic_Negative
+Hyperinflation makes raw material imports unaffordable,Economic_Negative
+Central bank default triggers supply chain collapse,Economic_Negative
+Rising steel prices halt warehouse construction plans,Economic_Negative
+VAT hike raises costs across entire supply chain,Economic_Negative
+Budget cuts reduce customs staffing at borders,Economic_Negative
+Credit market freeze halts new logistics investments,Economic_Negative
+Commodity bubble burst disrupts agricultural procurement,Economic_Negative
+Profit squeeze forces third party logistics firm closure,Economic_Negative
+Austerity program cuts port infrastructure budget,Economic_Negative
+New investment fund boosts logistics infrastructure,Economic_Positive
+Lower energy prices cut manufacturing input costs,Economic_Positive
+Trade incentives drive strong growth in exports,Economic_Positive
+Improved credit conditions support supplier expansion,Economic_Positive
+GDP growth accelerates driving manufacturing activity,Economic_Positive
+New infrastructure bonds fund port expansion project,Economic_Positive
+Tax relief on imports boosts raw material sourcing,Economic_Positive
+Exchange rate stabilises reducing import cost pressure,Economic_Positive
+Fuel price drop lowers freight operating costs,Economic_Positive
+Strong consumer demand drives record manufacturing output,Economic_Positive
+Tropical storm strengthens near major shipping hub,Weather_Negative
+Severe ice storm freezes freight across northern corridor,Weather_Negative
+Monsoon flooding cuts road access to industrial zone,Weather_Negative
+Extreme drought reduces river navigability for barges,Weather_Negative
+Wildfire smoke creates dangerous conditions for truckers,Weather_Negative
+Coastal erosion undermines dock loading infrastructure,Weather_Negative
+Lightning strikes disable power at major freight hub,Weather_Negative
+Sub-zero cold snap disables refrigerated truck fleets,Weather_Negative
+Unseasonal freeze damages entire citrus export harvest,Weather_Negative
+Waterspout damages vessels in busy shipping channel,Weather_Negative
+Heat dome forces rail speed restrictions reducing capacity,Weather_Negative
+River ice breakup floods and damages dock facilities,Weather_Negative
+Prolonged drought reduces hydroelectric supply to factories,Weather_Negative
+Sandstorm closes desert highway freight route,Weather_Negative
+Avalanche buries rail line serving industrial region,Weather_Negative
+Seasonal storm forecast for major port region,Weather_Neutral
+River level watch issued after heavy upstream rainfall,Weather_Neutral
+Freight operators preparing contingencies for storm season,Weather_Neutral
+Meteorologists tracking developing cyclone near trade lane,Weather_Neutral
+Port authority monitoring tidal surge risk closely,Weather_Neutral
+Weather agency issues crop harvest risk advisory,Weather_Neutral
+Logistics firms reviewing weather contingency procedures,Weather_Neutral
+Seasonal drought risk being monitored by operators,Weather_Neutral
+Winter road closures expected in mountain freight corridor,Weather_Neutral
+Flood risk mapping underway for coastal port areas,Weather_Neutral
+Calm forecast supports smooth freight scheduling this week,Weather_Positive
+Rainfall ends drought restoring barge river navigation,Weather_Positive
+Roads cleared after landslide restoring supply access,Weather_Positive
+Fog lifts restoring visibility for port cargo operations,Weather_Positive
+Warm front clears ice opening northern freight routes,Weather_Positive
+Storm passes ports reopen with minimal cargo damage,Weather_Positive
+Improved weather outlook supports offshore platform restart,Weather_Positive
+Dry conditions improve harvest output boosting exports,Weather_Positive
+Mild winter reduces heating costs for cold chain logistics,Weather_Positive
+River levels normalise fully restoring barge freight,Weather_Positive
+Dock workers at three ports stage coordinated walkout,Labour_Negative
+Airline ground crew strike grounds air cargo aircraft,Labour_Negative
+Bus driver strike disrupts urban last mile deliveries,Labour_Negative
+Security staff strike closes bonded freight warehouse,Labour_Negative
+Postal workers strike halts parcel delivery network,Labour_Negative
+Tyre factory strike disrupts automotive supply chain,Labour_Negative
+Quarry workers strike reduces aggregate supply,Labour_Negative
+Cement workers strike halts construction material supply,Labour_Negative
+Forestry workers strike cuts timber supply to sawmills,Labour_Negative
+Fuel depot staff strike halts fuel distribution network,Labour_Negative
+Cold storage workers strike disrupts frozen food supply,Labour_Negative
+Seafarers union strike grounds merchant shipping fleet,Labour_Negative
+Chemical plant technicians strike halts raw material output,Labour_Negative
+Paper mill strike cuts packaging supply to retailers,Labour_Negative
+Quarry blasting engineers strike halts mining output,Labour_Negative
+Workers reviewing management wage proposals carefully,Labour_Neutral
+Labour consultants brought in to mediate pay dispute,Labour_Neutral
+Union holds vote on whether to escalate strike action,Labour_Neutral
+Workers in talks over new shift and overtime terms,Labour_Neutral
+Strike threat issued pending response from management,Labour_Neutral
+Collective bargaining talks underway at shipping firm,Labour_Neutral
+Port union representatives meet with operations managers,Labour_Neutral
+Workers and management both signal willingness to resolve,Labour_Neutral
+Labour arbitration proceedings begin at automotive plant,Labour_Neutral
+Industry observers watch closely as pay talks continue,Labour_Neutral
+New pay structure agreement ends two week labour dispute,Labour_Positive
+Workers ratify three year contract resuming operations,Labour_Positive
+Mediation succeeds ending transport workers industrial action,Labour_Positive
+Long running port dispute finally resolved by arbitration,Labour_Positive
+Mine workers return as management accepts union demands,Labour_Positive
+Rail workers end strike after government intervenes,Labour_Positive
+New shift agreement ends warehouse worker disruption,Labour_Positive
+Factory floor dispute resolved with enhanced benefits,Labour_Positive
+Offshore platform crew return after wage deal signed,Labour_Positive
+Refinery workers accept new contract ending walkout,Labour_Positive
+New cryptocurrency exchange launches trading platform,Not_Relevant
+Marathon runner breaks national record at championship,Not_Relevant
+Popular restaurant chain opens new city centre branch,Not_Relevant
+Wildlife documentary wins international award tonight,Not_Relevant
+Basketball team signs star player before trade deadline,Not_Relevant
+Music streaming service announces price increase,Not_Relevant
+Local council approves new housing development plan,Not_Relevant
+Comedian performs sold out show at national venue,Not_Relevant
+New electric car model unveiled at motor show,Not_Relevant
+Art gallery acquires rare painting for collection,Not_Relevant
+Golf tournament final round results announced today,Not_Relevant
+Fashion designer launches new sustainable clothing line,Not_Relevant
+University research team discovers new marine species,Not_Relevant
+Television drama series wins best show at awards,Not_Relevant
+Online game reaches one hundred million active users,Not_Relevant

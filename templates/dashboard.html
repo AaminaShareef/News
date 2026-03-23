@@ -4,92 +4,110 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProcureGuard — AI Procurement Risk Intelligence</title>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Dashboard CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-<!-- Alert Banner -->
 <div id="alert-banner">
   <span>⚠ CRITICAL ALERT —</span>
   <strong id="alert-count">0</strong>&nbsp;high-risk event(s) require immediate attention
-  <span class="close-alert" id="close-alert" title="Dismiss">✕</span>
+  <span class="close-alert" id="close-alert">✕</span>
 </div>
 
-<!-- Spinner -->
 <div id="spinner-overlay">
   <div class="spinner-ring"></div>
   <div class="spinner-text" id="spinner-text">Analysing news data…</div>
 </div>
 
-<!-- Toast -->
 <div id="toast"></div>
 
-<!-- Navbar -->
+<!-- ── Navbar ── -->
 <nav class="navbar">
   <div class="navbar-brand">
     <div class="logo-icon">🛡️</div>
     <span class="brand-name">ProcureGuard</span>
     <span class="brand-live"><span class="live-dot"></span>LIVE</span>
   </div>
-  <div class="navbar-search">
-    <span class="search-icon">🔎</span>
-    <input id="search-input" type="text"
-      placeholder='e.g. "port strike OR flood OR war supply chain"'
-      autocomplete="off">
+
+  <!-- Search with dropdown suggestions -->
+  <div class="navbar-search-wrap">
+    <div class="navbar-search" id="search-container">
+      <span class="search-icon">🔎</span>
+      <input id="search-input" type="text"
+        placeholder="Type or choose a topic below…"
+        autocomplete="off">
+      <span class="search-clear" id="search-clear" title="Clear">✕</span>
+    </div>
+    <!-- Dropdown suggestions -->
+    <div class="search-dropdown" id="search-dropdown">
+      <div class="dropdown-section-label">🌍 Geopolitical</div>
+      <div class="dropdown-item" data-query="war supply chain disruption">War &amp; Conflict</div>
+      <div class="dropdown-item" data-query="sanctions trade restrictions">Sanctions &amp; Trade Restrictions</div>
+      <div class="dropdown-item" data-query="geopolitical tension oil supply">Geopolitical Tensions</div>
+      <div class="dropdown-section-label">📦 Logistics</div>
+      <div class="dropdown-item" data-query="port strike shipping delay">Port Strike</div>
+      <div class="dropdown-item" data-query="shipping container shortage freight">Shipping &amp; Freight</div>
+      <div class="dropdown-item" data-query="supply chain disruption logistics">Supply Chain Disruption</div>
+      <div class="dropdown-section-label">💰 Economic</div>
+      <div class="dropdown-item" data-query="trade tariff import export">Trade Tariffs</div>
+      <div class="dropdown-item" data-query="inflation commodity price supply">Inflation &amp; Commodity Prices</div>
+      <div class="dropdown-item" data-query="recession economic disruption manufacturing">Recession Impact</div>
+      <div class="dropdown-section-label">🌦 Weather</div>
+      <div class="dropdown-item" data-query="hurricane flood supply chain transport">Hurricane &amp; Floods</div>
+      <div class="dropdown-item" data-query="drought crop harvest shortage">Drought &amp; Harvest</div>
+      <div class="dropdown-item" data-query="typhoon cyclone shipping disruption">Typhoon &amp; Cyclone</div>
+      <div class="dropdown-section-label">👷 Labour</div>
+      <div class="dropdown-item" data-query="workers strike industrial action">Workers Strike</div>
+      <div class="dropdown-item" data-query="labour dispute factory shutdown">Labour Dispute</div>
+      <div class="dropdown-item" data-query="dock workers port walkout logistics">Dock Workers Walkout</div>
+    </div>
   </div>
+
   <div class="navbar-actions">
     <button class="btn btn-primary" id="analyze-btn">⚡ Analyse</button>
-    <button class="btn btn-outline" id="upload-btn">📂 Upload CSV</button>
     <button class="btn btn-outline btn-sm" id="export-btn">⬇ Export</button>
-    <input type="file" id="upload-input" accept=".csv">
   </div>
 </nav>
 
-<!-- Layout -->
+<!-- ── Layout ── -->
 <div class="layout">
 
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-title">🎛 Filters</div>
-
     <div class="filter-group">
       <div class="filter-label"><span class="fi-icon">▸</span> Country</div>
       <div class="filter-options" id="filter-country">
-        <div class="meta-item" style="font-size:0.73rem;padding:4px 2px;color:var(--text-muted)">
-          Run an analysis to populate filters.
-        </div>
+        <div style="font-size:0.73rem;padding:4px 2px;color:var(--text-muted)">Run analysis to populate.</div>
       </div>
     </div>
     <hr class="sidebar-divider">
-
     <div class="filter-group">
       <div class="filter-label"><span class="fi-icon">▸</span> Region</div>
       <div class="filter-options" id="filter-region"></div>
     </div>
     <hr class="sidebar-divider">
-
     <div class="filter-group">
-      <div class="filter-label"><span class="fi-icon">▸</span> Event Type</div>
+      <div class="filter-label"><span class="fi-icon">▸</span> Domain</div>
       <div class="filter-options" id="filter-event-type"></div>
     </div>
     <hr class="sidebar-divider">
-
     <div class="filter-group">
       <div class="filter-label"><span class="fi-icon">▸</span> Risk Level</div>
       <div class="filter-options" id="filter-risk-level"></div>
     </div>
     <hr class="sidebar-divider">
-
-    <div style="padding:4px 0 12px">
-      <div class="filter-label" style="margin-bottom:10px">Risk Key</div>
-      <div style="display:flex;flex-direction:column;gap:7px">
+    <div class="filter-group">
+      <div class="filter-label"><span class="fi-icon">▸</span> Sentiment</div>
+      <div class="filter-options" id="filter-sentiment"></div>
+    </div>
+    <hr class="sidebar-divider">
+    <div style="padding:4px 0 10px">
+      <div class="filter-label" style="margin-bottom:8px">Risk Key</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
         <div class="legend-item"><span class="legend-dot" style="background:#ff3d54"></span>HIGH — Immediate action</div>
         <div class="legend-item"><span class="legend-dot" style="background:#ff6b35"></span>MEDIUM-HIGH — Monitor closely</div>
         <div class="legend-item"><span class="legend-dot" style="background:#f5a623"></span>MEDIUM — Track &amp; assess</div>
@@ -98,7 +116,15 @@
       </div>
     </div>
     <hr class="sidebar-divider">
-
+    <div style="padding:4px 0 10px">
+      <div class="filter-label" style="margin-bottom:8px">Sentiment Key</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div class="legend-item"><span class="legend-dot" style="background:#ff3d54"></span>Negative — Active disruption</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#f5a623"></span>Neutral — Potential risk</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#3ecf72"></span>Positive — Resolving</div>
+      </div>
+    </div>
+    <hr class="sidebar-divider">
     <button class="btn btn-outline btn-sm" id="clear-filters" style="width:100%;justify-content:center;">
       ✕ Clear All Filters
     </button>
@@ -130,67 +156,106 @@
         <div class="kpi-sub">minor events</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Top Category</div>
+        <div class="kpi-label">Top Domain</div>
         <div class="kpi-value" id="kpi-event" style="font-size:1rem;padding-top:6px;letter-spacing:0">—</div>
-        <div class="kpi-sub">dominant event type</div>
+        <div class="kpi-sub">dominant category</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Neg / Pos</div>
+        <div class="kpi-value" id="kpi-sentiment" style="font-size:1.2rem;padding-top:4px">—</div>
+        <div class="kpi-sub">sentiment split</div>
       </div>
     </div>
 
-    <!-- Section: Overview -->
+    <!-- Overview -->
     <div class="charts-section-label">Overview</div>
     <div class="charts-row">
       <div class="chart-card">
         <div class="chart-header">
-          <div class="chart-title">📊 Events by Type</div>
+          <div class="chart-title">📊 Events by Domain</div>
           <span class="chart-badge">VOLUME</span>
         </div>
-        <div class="chart-desc">Which disruption category has the most articles?</div>
-        <div class="chart-wrap"><canvas id="bar-chart" height="200"></canvas></div>
+        <div class="chart-desc">Which disruption domain has the most articles?</div>
+        <div class="chart-wrap"><canvas id="bar-chart"></canvas></div>
       </div>
       <div class="chart-card">
         <div class="chart-header">
           <div class="chart-title">◉ Risk Distribution</div>
           <span class="chart-badge">SPLIT</span>
         </div>
-        <div class="chart-desc">What proportion of events are HIGH vs LOW risk?</div>
-        <div class="chart-wrap"><canvas id="pie-chart" height="200"></canvas></div>
+        <div class="chart-desc">Proportion of events by risk level.</div>
+        <div class="chart-wrap"><canvas id="pie-chart"></canvas></div>
       </div>
       <div class="chart-card">
         <div class="chart-header">
           <div class="chart-title">📈 Risk Score Trend</div>
           <span class="chart-badge">TIMELINE</span>
         </div>
-        <div class="chart-desc">Is overall supply chain risk rising or falling over time?</div>
-        <div class="chart-wrap"><canvas id="line-chart" height="200"></canvas></div>
+        <div class="chart-desc">Is supply chain risk rising or falling over time?</div>
+        <div class="chart-wrap"><canvas id="line-chart"></canvas></div>
       </div>
     </div>
 
-    <!-- Section: Deep Dive -->
+    <!-- Deep Dive -->
     <div class="charts-section-label">Deep Dive</div>
     <div class="charts-row">
       <div class="chart-card">
         <div class="chart-header">
-          <div class="chart-title">⚖️ Avg Risk by Category</div>
+          <div class="chart-title">⚖️ Avg Risk by Domain</div>
           <span class="chart-badge">SEVERITY</span>
         </div>
-        <div class="chart-desc">Which event type carries the highest average risk weight?</div>
-        <div class="chart-wrap"><canvas id="hbar-chart" height="200"></canvas></div>
+        <div class="chart-desc">Which domain carries the highest average risk score?</div>
+        <div class="chart-wrap"><canvas id="hbar-chart"></canvas></div>
       </div>
       <div class="chart-card">
         <div class="chart-header">
-          <div class="chart-title">🧱 Risk Mix per Category</div>
+          <div class="chart-title">🧱 Risk Mix per Domain</div>
           <span class="chart-badge">COMPOSITION</span>
         </div>
-        <div class="chart-desc">For each disruption type, what mix of risk levels appears?</div>
-        <div class="chart-wrap"><canvas id="stacked-chart" height="200"></canvas></div>
+        <div class="chart-desc">For each domain, what mix of risk levels appears?</div>
+        <div class="chart-wrap"><canvas id="stacked-chart"></canvas></div>
       </div>
       <div class="chart-card">
         <div class="chart-header">
           <div class="chart-title">🌍 Top Affected Regions</div>
           <span class="chart-badge">GEOGRAPHY</span>
         </div>
-        <div class="chart-desc">Where are disruptions concentrated? Bar colour = dominant risk.</div>
-        <div class="chart-wrap"><canvas id="country-chart" height="200"></canvas></div>
+        <div class="chart-desc">Where are disruptions concentrated?</div>
+        <div class="chart-wrap"><canvas id="country-chart"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Sentiment -->
+    <div class="charts-section-label">Sentiment Analysis</div>
+    <div class="charts-row charts-row-half">
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">🎭 Sentiment per Domain</div>
+          <span class="chart-badge">SENTIMENT</span>
+        </div>
+        <div class="chart-desc">Negative vs Neutral vs Positive articles per domain.</div>
+        <div class="chart-wrap"><canvas id="sentiment-chart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title">💡 How Scores Are Calculated</div>
+          <span class="chart-badge">FORMULA</span>
+        </div>
+        <div class="chart-desc">Risk = Domain base × Sentiment weight × Model confidence</div>
+        <div class="formula-card">
+          <div class="formula-row">
+            <span class="formula-label">Domain weights</span>
+            <span class="formula-vals">Geopolitical 0.90 · Economic 0.75 · Logistics 0.60 · Weather 0.55 · Labour 0.50</span>
+          </div>
+          <div class="formula-row">
+            <span class="formula-label">Sentiment weights</span>
+            <span class="formula-vals">🔴 Negative ×1.00 &nbsp;·&nbsp; 🟡 Neutral ×0.55 &nbsp;·&nbsp; 🟢 Positive ×0.15</span>
+          </div>
+          <div class="formula-row">
+            <span class="formula-label">Thresholds</span>
+            <span class="formula-vals">≥0.22 HIGH · ≥0.17 MEDIUM-HIGH · ≥0.12 MEDIUM · ≥0.07 LOW-MEDIUM · &lt;0.07 LOW</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -201,18 +266,15 @@
         <div class="results-meta" id="results-count">Run a query to load articles</div>
       </div>
     </div>
-
     <div id="news-grid"></div>
     <div class="pagination" id="pagination"></div>
 
   </main>
 </div>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
 <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
 <script src="{{ url_for('static', filename='js/map.js') }}"></script>
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-
 </body>
 </html>
