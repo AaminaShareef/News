@@ -268,9 +268,9 @@ def collect_training():
     Returns the run report as JSON.
     """
     try:
-        from collect_training_data import run as collect_run
+        from utils.collect_trainingdata import run as collect_run
     except ImportError:
-        return jsonify({'error': 'collect_training_data.py not found'}), 500
+        return jsonify({'error': 'utils.collect_trainingdata not found'}), 500
 
     body      = request.get_json(silent=True) or {}
     domains   = body.get('domains')   or None

@@ -285,6 +285,31 @@ def run_pipeline(news_json_path: Path, train_json_path: Path) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Programmatic wrapper used by the Flask app
+def run(domains: List[str] = None, page_size: int = 30, from_date: str = None) -> Dict[str, Any]:
+    """
+    Run the Track A pipeline using configured NEWS_JSON / TRAIN_JSON paths.
+
+    Parameters `domains`, `page_size`, `from_date` are accepted for API
+    compatibility but currently not used by the offline pipeline.
+
+    Returns a JSON-serialisable report dict.
+    """
+    from config.settings import NEWS_JSON, TRAIN_JSON
+
+    try:
+        run_pipeline(NEWS_JSON, TRAIN_JSON)
+    except Exception as exc:
+        return {"status": "error", "error": str(exc)}
+
+    try:
+        with open(TRAIN_JSON, encoding="utf-8") as f:
+            data = json.load(f)
+        return {"status": "ok", "report": data.get("metadata", {})}
+    except Exception as exc:
+        return {"status": "ok", "report": {}, "warning": f"could not read {TRAIN_JSON}: {exc}"}
+
+# ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 

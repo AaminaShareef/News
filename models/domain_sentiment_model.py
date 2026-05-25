@@ -280,13 +280,84 @@ class _DistilBertClassifier:
             sp   = F.softmax(s_log,  dim=-1).cpu().numpy()[0]
             ii   = int(np.argmax(ip))
             si   = int(np.argmax(sp))
-            ind  = INDUSTRY_LABELS[ii] if float(ip[ii]) >= 0.20 else "Not_Relevant"
+            ind = INDUSTRY_LABELS[ii] if float(ip[ii]) >= 0.20 else "Not_Relevant"
             return ind, round(float(ip[ii]), 3), SENTIMENT_LABELS[si], round(float(sp[si]), 3)
         except Exception as exc:
             log.error("Inference error: %s", exc)
             ind,  ic = _RuleBasedDomainModel().predict(text)
             sent, sc = _RuleBasedSentimentModel().predict(text)
             return ind, ic, sent, sc
+
+    def predict_multi(self, text: str, max_labels: int = 3, min_confidence: float = 0.20) -> dict:
+        if not self._fitted or self._model is None:
+            primary, primary_conf = _RuleBasedDomainModel().predict(text)
+            sentiment, sent_conf = _RuleBasedSentimentModel().predict(text)
+            return {
+                "primary_domain": primary,
+                "secondary_domains": [],
+                "domain_scores": {primary: primary_conf} if primary != "Not_Relevant" else {},
+                "domain_count": 1 if primary != "Not_Relevant" else 0,
+                "sentiment": sentiment,
+                "dom_confidence": primary_conf,
+                "sent_confidence": sent_conf,
+            }
+        try:
+            import torch
+            import torch.nn.functional as F
+            enc = self._tokenizer(
+                text[:512], return_tensors="pt", truncation=True,
+                max_length=128, padding="max_length",
+            )
+            ids = enc["input_ids"].to(self._device)
+            mask = enc["attention_mask"].to(self._device)
+            self._model.eval()
+            with torch.no_grad():
+                i_log, s_log = self._model(ids, mask)
+            ip = F.softmax(i_log, dim=-1).cpu().numpy()[0]
+            sp = F.softmax(s_log, dim=-1).cpu().numpy()[0]
+
+            top_indices = list(np.argsort(ip)[::-1][:max_labels])
+            primary_idx = top_indices[0]
+            primary = INDUSTRY_LABELS[primary_idx] if float(ip[primary_idx]) >= min_confidence else "Not_Relevant"
+            primary_conf = round(float(ip[primary_idx]), 3) if primary != "Not_Relevant" else 0.0
+
+            secondary = []
+            domain_scores: dict[str, float] = {}
+            for idx in top_indices:
+                label = INDUSTRY_LABELS[idx]
+                score = round(float(ip[idx]), 3)
+                if label == primary:
+                    domain_scores[label] = score
+                    continue
+                if score >= min_confidence:
+                    secondary.append(label)
+                domain_scores[label] = score
+
+            sentiment_idx = int(np.argmax(sp))
+            sentiment = SENTIMENT_LABELS[sentiment_idx]
+            sent_conf = round(float(sp[sentiment_idx]), 3)
+            return {
+                "primary_domain": primary,
+                "secondary_domains": secondary,
+                "domain_scores": domain_scores,
+                "domain_count": len(secondary) + (1 if primary != "Not_Relevant" else 0),
+                "sentiment": sentiment,
+                "dom_confidence": primary_conf,
+                "sent_confidence": sent_conf,
+            }
+        except Exception as exc:
+            log.error("Inference error: %s", exc)
+            primary, primary_conf = _RuleBasedDomainModel().predict(text)
+            sentiment, sent_conf = _RuleBasedSentimentModel().predict(text)
+            return {
+                "primary_domain": primary,
+                "secondary_domains": [],
+                "domain_scores": {primary: primary_conf} if primary != "Not_Relevant" else {},
+                "domain_count": 1 if primary != "Not_Relevant" else 0,
+                "sentiment": sentiment,
+                "dom_confidence": primary_conf,
+                "sent_confidence": sent_conf,
+            }
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -348,6 +419,53 @@ def predict(
 
     industry, ind_conf, sentiment, sent_conf = clf.predict(text)
     return industry, sentiment, ind_conf, sent_conf
+
+
+def predict_multi(domain_model, sentiment_model, text: str) -> dict:
+    """
+    Multi-domain prediction wrapper used by app.py.
+
+    Returns a dict with keys expected by the pipeline.
+    """
+    if not text or not text.strip():
+        return {
+            "primary_domain": "Not_Relevant",
+            "secondary_domains": [],
+            "domain_scores": {},
+            "domain_count": 0,
+            "sentiment": "Neutral",
+            "dom_confidence": 0.0,
+            "sent_confidence": 0.0,
+        }
+
+    clf = domain_model if isinstance(domain_model, _DistilBertClassifier) else _classifier
+    if clf is None:
+        primary, primary_conf = _RuleBasedDomainModel().predict(text)
+        sentiment, sent_conf = _RuleBasedSentimentModel().predict(text)
+        return {
+            "primary_domain": primary,
+            "secondary_domains": [],
+            "domain_scores": {primary: primary_conf} if primary != "Not_Relevant" else {},
+            "domain_count": 1 if primary != "Not_Relevant" else 0,
+            "sentiment": sentiment,
+            "dom_confidence": primary_conf,
+            "sent_confidence": sent_conf,
+        }
+
+    if isinstance(clf, _DistilBertClassifier):
+        return clf.predict_multi(text)
+
+    # Fallback if the provided model does not support multi prediction.
+    industry, ind_conf, sentiment, sent_conf = predict(domain_model, sentiment_model, text)
+    return {
+        "primary_domain": industry,
+        "secondary_domains": [],
+        "domain_scores": {industry: ind_conf} if industry != "Not_Relevant" else {},
+        "domain_count": 1 if industry != "Not_Relevant" else 0,
+        "sentiment": sentiment,
+        "dom_confidence": ind_conf,
+        "sent_confidence": sent_conf,
+    }
 
 
 def get_all_industries() -> list:
