@@ -1,0 +1,118 @@
+{
+  "run_timestamp": "2026-05-25T05:30:21.675987+00:00",
+  "run_date": "2026-05-25",
+  "page_size_per_query": 50,
+  "relevant_only_mode": false,
+  "from_date_filter": null,
+  "industries_targeted": [
+    "Oil & Gas",
+    "Semiconductors",
+    "Pharmaceuticals",
+    "Automotive",
+    "Chemicals",
+    "Metals & Mining",
+    "Aerospace & Defence",
+    "Agriculture & Food",
+    "Electronics",
+    "Textiles & Apparel",
+    "Retail & FMCG",
+    "Construction",
+    "Logistics & Shipping",
+    "Energy & Utilities"
+  ],
+  "new_articles_added": 0,
+  "combined_total": 0,
+  "combined_file": "training_data\\combined_training_data.json",
+  "sentiment_distribution": {
+    "Negative": 0,
+    "Neutral": 0,
+    "Positive": 0
+  },
+  "industry_distribution": {},
+  "per_industry": {
+    "Oil & Gas": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Semiconductors": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Pharmaceuticals": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Automotive": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Chemicals": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Metals & Mining": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Aerospace & Defence": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Agriculture & Food": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Electronics": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Textiles & Apparel": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Retail & FMCG": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Construction": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Logistics & Shipping": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    },
+    "Energy & Utilities": {
+      "fetched": 0,
+      "relevant": 0,
+      "new_to_combined": 0,
+      "source": "cache"
+    }
+  }
+}

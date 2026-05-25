@@ -1,0 +1,84 @@
+# industry_map.yaml
+# Replaces domain_map.yaml from the doc
+# Maps BERTopic cluster IDs to industry labels at runtime
+# The 10 industries this system tracks
+
+industries:
+  - id: semiconductor_electronics
+    label: "Semiconductor & Electronics"
+    keywords_hint: ["chip", "semiconductor", "wafer", "fab", "electronics", "pcb", "component"]
+    poll_interval_seconds: 1800   # 30 min
+
+  - id: automotive
+    label: "Automotive"
+    keywords_hint: ["automotive", "vehicle", "car", "truck", "ev", "battery", "assembly plant"]
+    poll_interval_seconds: 1800
+
+  - id: pharmaceuticals_healthcare
+    label: "Pharmaceuticals & Healthcare"
+    keywords_hint: ["pharma", "drug", "medicine", "hospital", "vaccine", "API", "medical device"]
+    poll_interval_seconds: 900    # 15 min — fast-moving like pandemic domain
+
+  - id: food_agriculture
+    label: "Food & Agriculture"
+    keywords_hint: ["food", "grain", "crop", "harvest", "agriculture", "fertilizer", "livestock"]
+    poll_interval_seconds: 1800
+
+  - id: energy_oil_gas
+    label: "Energy & Oil & Gas"
+    keywords_hint: ["oil", "gas", "LNG", "pipeline", "refinery", "crude", "energy", "petroleum"]
+    poll_interval_seconds: 3600   # 1 hr
+
+  - id: retail_consumer_goods
+    label: "Retail & Consumer Goods"
+    keywords_hint: ["retail", "consumer", "fmcg", "supermarket", "inventory", "warehouse", "ecommerce"]
+    poll_interval_seconds: 43200  # 12 hrs
+
+  - id: shipping_logistics
+    label: "Shipping & Logistics"
+    keywords_hint: ["shipping", "freight", "port", "container", "logistics", "cargo", "vessel"]
+    poll_interval_seconds: 900    # 15 min — port closures happen fast
+
+  - id: aerospace_defense
+    label: "Aerospace & Defense"
+    keywords_hint: ["aerospace", "aircraft", "defense", "aviation", "satellite", "missile", "weapon"]
+    poll_interval_seconds: 21600  # 6 hrs
+
+  - id: construction_raw_materials
+    label: "Construction & Raw Materials"
+    keywords_hint: ["construction", "steel", "cement", "lumber", "copper", "mining", "raw material"]
+    poll_interval_seconds: 43200  # 12 hrs
+
+  - id: technology_it_hardware
+    label: "Technology & IT Hardware"
+    keywords_hint: ["server", "data center", "hardware", "cloud infrastructure", "networking", "storage"]
+    poll_interval_seconds: 7200   # 2 hrs
+
+# External disruption types — these are the EVENT types that CAUSE disruption
+# Equivalent to domains in the original doc — but here they describe the CAUSE not the victim
+disruption_types:
+  - pandemic_health
+  - conflict_geopolitical
+  - weather_climate
+  - labour_strike
+  - economic_commodity
+  - political_policy
+  - cyber_attack
+  - regulatory_compliance
+
+# BERTopic settings (same as doc)
+bertopic:
+  confidence_threshold: 0.40
+  max_industries_per_article: 3
+
+# Semantic grouping (same as doc)
+similarity:
+  grouping_threshold: 0.82
+  dedup_threshold: 0.95
+
+# Risk levels (same as doc)
+risk_levels:
+  low: 2.0
+  medium: 3.4
+  high: 4.4
+  critical: 5.0

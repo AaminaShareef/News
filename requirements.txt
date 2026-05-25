@@ -1,0 +1,48 @@
+# Supply Chain Disruption Prediction System
+# Tech stack exactly as specified in doc section 10
+# Install: pip install -r requirements.txt
+
+# API fetching
+requests>=2.31.0
+feedparser>=6.0.10         # RSS (WHO, FEMA, Reuters)
+
+# Text cleaning (doc section 10)
+ftfy>=6.1.3
+beautifulsoup4>=4.12.0
+langdetect>=1.0.9
+regex>=2023.10.3
+
+# NLP core — DistilBERT (doc section 10)
+transformers>=4.40.0
+sentence-transformers>=2.7.0
+torch>=2.0.0
+
+# Topic modelling — BERTopic (doc section 10)
+bertopic>=0.16.0
+umap-learn>=0.5.6
+hdbscan>=0.8.33
+
+# Anomaly detection (doc section 10)
+scikit-learn>=1.4.0
+
+# Storage (doc section 10)
+sqlalchemy>=2.0.0
+
+# Scheduling (doc section 10)
+schedule>=1.2.0
+
+# Dashboard API (doc section 10)
+fastapi>=0.111.0
+uvicorn>=0.29.0
+
+# Configuration (doc section 10)
+pydantic>=2.7.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+
+# Utilities (doc section 10)
+numpy>=1.26.0
+pandas>=2.2.0
+
+# Data parsing
+lxml>=5.2.0
